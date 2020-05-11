@@ -1,14 +1,55 @@
 import React from 'react';
 
 class IpList extends React.Component {
-  ipAddresses = ['5.39.70.218', '45.9.148.25']
-  listItems = this.ipAddresses.map((addr) => 
-    <li>{addr}</li>
-  )
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3001/ips", {
+    }).then(res => res.json())
+      .then(
+        (result) => {
+            console.log(result)
+          this.setState({
+            isLoaded: true,
+            items: result
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+
   render() {
-    return (
-        <ul>{this.listItems}</ul>
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <ul>
+            {items.map(item => (
+                <li key={item}>
+                    {item}
+                </li>
+            ))}
+        </ul>
       );
+    }
   }
 
 }

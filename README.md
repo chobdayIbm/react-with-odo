@@ -29,8 +29,8 @@ rm -rf .odo
 
 
 ## Further Work
-* Serving a production deployment
 * Connecting to backend services 
 * Hot debugging
+* CORS only for server
 
 Comments are welcome!
