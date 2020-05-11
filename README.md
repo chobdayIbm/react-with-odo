@@ -22,6 +22,7 @@ odo push
 The first push takes quite long, about 2min for the app to deploy using s2i and start
 
 ## Production 
+See the branch *prod*
 In the project directory, run:
 ```
 odo project set prod
@@ -39,8 +40,9 @@ rm -rf .odo
 
 
 ## Further Work
-* Serving a production deployment
 * Connecting to backend services 
 * Hot debugging
+* App with express back-end too
+* Client-side routing based on https://create-react-app.dev/docs/deployment/ (Serving Apps with Client-Side Routing)
 
 Comments are welcome!
