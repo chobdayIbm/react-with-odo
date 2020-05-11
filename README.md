@@ -21,6 +21,16 @@ odo push
 ```
 The first push takes quite long, about 2min for the app to deploy using s2i and start
 
+## Production 
+In the project directory, run:
+```
+odo project set prod
+odo create nodejs hello-react --port 3000/tcp
+odo config set --env NODE_ENV=production
+odo url create --port 3000
+odo push 
+```
+
 ## Uninstall 
 ```
 odo app delete app -f
