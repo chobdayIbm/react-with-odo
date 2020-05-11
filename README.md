@@ -10,20 +10,20 @@ odo login $SERVER --token=$TOKEN
 ```
 
 ## Quick Installation
-Note : This is the quickest way and will run a developement server
+Note : This is the quickest way and will run a development server
 
 In the project directory, run:
 ```
 odo project set myproject 
 odo create nodejs hello-react --port 3000/tcp
 odo url create --port 3000
-odo push # first push takes quite long, ~2min for app to deploy using s2i and start
+odo push 
 ```
-
+The first push takes quite long, about 2min for the app to deploy using s2i and start
 
 ## Uninstall 
 ```
-odo app delete app
+odo app delete app -f
 rm -rf .odo
 ```
 
