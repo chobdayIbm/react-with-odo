@@ -1,2 +1,2 @@
-npm run build
+npm run build # .env.production takes precedence here.  Refer to https://create-react-app.dev/docs/adding-custom-environment-variables/#what-other-env-files-can-be-used for the priority of .env files
 odo push
