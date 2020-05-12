@@ -9,6 +9,9 @@ ComponentSettings:
   Application: app
   Project: database
   Name: hello-react
+  Envs:
+  - Name: NODE_ENV
+    Value: production
   Url:
   - Name: hello-react-3000
     Port: 3000

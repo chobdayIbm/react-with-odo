@@ -11,7 +11,7 @@ class IpList extends React.Component {
   }
 
   componentDidMount() {
-    const BACKEND_API_URL = `http://${process.env.REACT_APP_BACKEND_HOST}:80`
+    const BACKEND_API_URL = `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}`
     const URL = `${BACKEND_API_URL}/ips`
     fetch(URL, {
     }).then(res => res.json())

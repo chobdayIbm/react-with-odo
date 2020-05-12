@@ -21,6 +21,17 @@ odo push
 ```
 The first push takes quite long, about 2min for the app to deploy using s2i and start
 
+## Production 
+See the branch *prod*
+In the project directory, run:
+```
+odo project set prod
+odo create nodejs hello-react --port 3000/tcp
+odo config set --env NODE_ENV=production
+odo url create --port 3000
+odo push 
+```
+
 ## Uninstall 
 ```
 odo app delete app -f
@@ -29,8 +40,9 @@ rm -rf .odo
 
 
 ## Further Work
-* Connecting to backend services 
 * Hot debugging
 * CORS only for server
+* App with express back-end too
+* Client-side routing based on https://create-react-app.dev/docs/deployment/ (Serving Apps with Client-Side Routing)
 
 Comments are welcome!
